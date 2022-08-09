@@ -1,0 +1,5 @@
+ROS1, ROS2 차이점
+- 다양한 운영체제 지원: Linux, Mac OS 및 Windows 10 지원
+- roscore가 사라짐: ROS2에서는 master의 개념이 사라지고       
+   node를 실행하는 것으로 연결이 이루어집니다.
+- build 툴 변경: 기존 catkin에서 colcon 으로 변경됨
