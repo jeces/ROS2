@@ -17,3 +17,26 @@
   - sudo nano ~/.bashrc 
   - export ROS_DOMAIN_ID = [숫자]
   
+  
+
+  
+# 미들웨어 rmw_fastrtps 설치
+  
+ 1 apt 저장소 설치
+  - sudo apt install ros-foxy-rmw-fastrtps-cpp 
+   
+ 2 ROS2 워크스페이스 source 폴더에 Fast DDS, rmw_fastrtps clone
+  - cd 워크스페이스/src
+  - git clone https://github.com/ros2/rmw_fastrtps ros2/rmw_fastrtps
+  - git clone https://github.com/eProsima/Fast-DDS eProsima/fastrtps
+     
+ 3 Fast DDS 필요한 패키지 설치 
+  - cd ..
+  - rosdep install --from src -i
+  
+ 4 colcon 빌드
+  - colcon build --symlink-install
+  
+ 5 환경변수 지정
+  - source ~/.bashrc
+  - export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
