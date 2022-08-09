@@ -1,47 +1,46 @@
-명령어 정리
+리눅스 명령어
 
-source 
-- source 명령어는 스크립트 파일을 수정한 후에 수정된 값을 바로 적용하기 위해 사용하는 명령어
+1 source 
+ - source 명령어는 스크립트 파일을 수정한 후에 수정된 값을 바로 적용하기 위해 사용하는 명령어
 
-colcon build --packages-select  autoware_map_msgs
-특정 패키지 빌드
+2 colcon build 
+ - colcon build 전체빌드(ros2)
+ - cannot found 시 
+   sudo apt install python3-colcon-common-extensions
+ - 옵션 --packages-select  autoware_map_msgs (특정 패키지 빌드)
 
-echo
-- echo 명령어는 인수로 전달되는 텍스트 / 문자열을 표시하는 데 사용
- 예시) echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+3 echo
+ - echo 명령어는 인수로 전달되는 텍스트 / 문자열을 표시하는 데 사용
+   예시) echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
          ~/.bashrc에 source /opt/ros/foxy/setup.bash를 추가
 
-pip3
-- pip3 는 파이썬으로 작성된 패키지 소프트웨어를 설치 및 관리하는 패키지 관리 시스템
+4 pip3
+ - pip3 는 파이썬으로 작성된 패키지 소프트웨어를 설치 및 관리하는 패키지 관리 시스템
 
-apt
-- apt = Advanced Packaging Tool, .deb 형식의 패키지들을 관리(설치, 삭제, 업데이트)해주는 툴
+5 apt
+ - apt = Advanced Packaging Tool, .deb 형식의 패키지들을 관리(설치, 삭제, 업데이트)해주는 툴
 
-wget
-wget 명령어는 웹에서 파일 다운로드를 도와주는 리눅스 커맨드라인 유틸리티
+6 wget
+ - wget 명령어는 웹에서 파일 다운로드를 도와주는 리눅스 커맨드라인 유틸리티
 
-bash
+7 bash
+ - 
 
-mkdir -p
-- mkdir -p 옵션은 안전하게 파일 경로를 생성
+8 mkdir -p
+ - mkdir -p 옵션은 안전하게 파일 경로를 생성
 
-git clone
-- git clone 명령어는 원격의 Git 저장소를 로컬에 복제해오는 명령어
+9 git clone
+ - git clone 명령어는 원격의 Git 저장소를 로컬에 복제해오는 명령어
 
-rosdep 
+10 rosdep 
  - rosdep 이란 컴파일이나 ROS상의 core component들을 구동하는 데 필요한 시스템 의존성을 찾아서 손쉽게 설치할 수 있는 도구
 
-colcon build
-- colcon build 전체빌드(ros2)
-- cannot found 시 
-   sudo apt install python3-colcon-common-extensions
+11 캐시삭제
+ - sudo rm /var/lib/apt/lists/lock
+ - sudo rm /var/cache/apt/archives/lock
+ - sudo rm /var/lib/dpkg/lock*
+   # 이후 패키지 업데이트
+    - sudo dpkg --configure -a
+    - sudo apt update
 
-캐시삭제
-sudo rm /var/lib/apt/lists/lock
-sudo rm /var/cache/apt/archives/lock
-sudo rm /var/lib/dpkg/lock*
-# 이후 패키지 업데이트
-sudo dpkg --configure -a
-sudo apt update
-
-rosdep update && rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent
+12 rosdep update && rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent
