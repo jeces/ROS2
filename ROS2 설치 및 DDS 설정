@@ -18,3 +18,37 @@
   - source /opt/ros/foxy/setup.bash
   - ros2 run demo_nodes_cpp talker
   - ros2 run demo_nodes_py listener
+
+ 5 ROS2 개발 툴 설치
+  - sudo apt update && sudo apt install -y \
+    build-essential \
+    cmake \
+    git \
+    libbullet-dev \
+    python3-colcon-common-extensions \
+    python3-flake8 \
+    python3-pip \
+    python3-pytest-cov \
+    python3-rosdep \
+    python3-setuptools \
+    python3-vcstool \
+    wget
+  - python3 -m pip install -U \
+    argcomplete \
+    flake8-blind-except \
+    flake8-builtins \
+    flake8-class-newline \
+    flake8-comprehensions \
+    flake8-deprecated \
+    flake8-docstrings \
+    flake8-import-order \
+    flake8-quotes \
+    pytest-repeat \
+    pytest-rerunfailures \
+    pytest
+  - sudo apt install --no-install-recommends -y \
+    libasio-dev \
+    libtinyxml2-dev \
+    libcunit1-dev
+    
+[출처] 001 ROS 2 개발 환경 구축 (오픈소스 소프트웨어 & 하드웨어: 로봇 기술 공유 카페 (오로카)) | 작성자 표윤석
