@@ -1,0 +1,39 @@
+● 작업공간 생성
+
+ 1. mkdir –p ~/linorobot2_ws/src                                    
+    작업공간 폴더 생성
+
+ 2. cd ~/linorobot2_ws/src                                          
+    작업공간 폴더 이동
+
+ 3. git clone https://github.com/ros/ros_tutorials.git –b foxy-devel    
+    테스트 패키지 설치
+
+ 4. cd ~/linorobot2_ws                                             
+    작업공간으로 이동 후
+
+ 5. rosdep install -i --from-path src --rosdistro foxy –y            
+    의존성 패키지 설치
+
+ 6. colcon build                                                    
+    빌드
+
+ 7. . install/local_setup.bash                                         
+    bash 환경설정  
+
+● 연마로봇 패키지 설치
+
+ 1. source /opt/ros/foxy/setup.bash
+    setup.bash 파일 적용
+
+ 2. cd /tmp
+    tmp 폴더 이동
+
+ 3. wget https://raw.githubusercontent.com/linorobot/linorobot2/${ROS_DISTRO}/install_linorobot2.bash
+    해당 url 다운로드
+
+ 4. bash install_linorobot2.bash mecanum (로봇 먼저 적용)
+    macanum ydlidar bash
+
+ 5. source ~/.bashrc                                                 
+    적용
