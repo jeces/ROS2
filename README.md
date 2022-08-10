@@ -33,6 +33,8 @@
  3 Fast DDS 필요한 패키지 설치 
   - cd ..
   - rosdep install --from src -i
+  - ws안에서 rosdep실행할때 스킵 키 실행할 것.
+    rosdep update && rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent
   
  4 colcon 빌드
   - colcon build --symlink-install
