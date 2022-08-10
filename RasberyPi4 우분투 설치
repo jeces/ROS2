@@ -1,0 +1,7 @@
+# 우분투 설치 후 
+
+ 1 외부접속을 위해 SSH 허용
+  - sudo apt update
+  - sudo apt install openssh-server (설치)
+  - sudo systemctl status ssh (구동확인)
+  - sudo ufw allow ssh (방화벽 오픈)
