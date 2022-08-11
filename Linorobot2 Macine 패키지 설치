@@ -46,3 +46,21 @@
  4 Teensy 실제 펌웨어 업로드 (위 체크 다되었을 시)
   - cd linorobot2_hardware/firmware
   - pio run --target upload -e <your_teensy_board> (Teensy모델에 맞게 입력)
+
+
+# ydlidar 드라이버 수동 설치
+ - cd /tmp
+ - git clone https://github.com/YDLIDAR/YDLidar-SDK.git
+ - mkdir YDLidar-SDK/build
+ - cd YDLidar-SDK/build
+ - cmake ..
+ - make
+ - sudo make install
+ - cd $WORKSPACE
+ - git clone https://github.com/YDLIDAR/ydlidar_ros2_driver src/ydlidar_ros2_driver
+ - chmod 0777 src/ydlidar_ros2_driver/startup/*
+ - sudo echo  'KERNEL=="ttyUSB*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE:="0666", GROUP:="dialout",  SYMLINK+="ydlidar"' >/etc/udev/rules.d/ydlidar.rules
+ - sudo echo  'KERNEL=="ttyACM*", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE:="0666", GROUP:="dialout",  SYMLINK+="ydlidar"' >/etc/udev/rules.d/ydlidar-V2.rules
+ - sudo echo  'KERNEL=="ttyUSB*", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", MODE:="0666", GROUP:="dialout",  SYMLINK+="ydlidar"' >/etc/udev/rules.d/ydlidar-2303.rules
+ - colcon build --symlink-install
+ - source $WORKSPACE/install/setup.bash
