@@ -1,0 +1,57 @@
+# 호스트PC(제어) Linorobot2 패키지 설치
+
+ 1 패키지 설치
+  - cd HOSTWORKSPACE
+  - git clone -b $ROS_DISTRO https://github.com/linorobot/linorobot2 src/linorobot2
+  - rosdep update && rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent --skip-keys micro_ros_agent
+    종속성 검사 건너 뜀
+  - colcon build
+  - source install/setup.bash
+  
+ 2 로봇 유형 정의
+  - echo "export LINOROBOT2_BASE=2wd" >> ~/.bashrc
+  - source ~/.bashrc
+  
+ 3 RVIZ 구성
+  - cd HOSTWORKSPACE
+  - git clone https://github.com/linorobot/linorobot2_viz src/linorobot2_viz
+  - rosdep update && rosdep install --from-path src --ignore-src -y 
+  - colcon build
+  - source install/setup.bash
+  
+  
+# 호스트PC(제어) 하드웨어 패키지 설치(Teensy)
+  
+ 1 하드웨어 다운로드
+  - cd $HOME
+  - git clone https://github.com/linorobot/linorobot2_hardware -b $ROS_DISTRO
+   
+ 2 platformio 다운로드 설치(platformio 사용 시 Arudino IDE 없이 펌웨어 개발 가능)
+  - python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"
+  - echo "PATH=\"\$PATH:\$HOME/.platformio/penv/bin\"" >> $HOME/.bashrc ($PATH에 platformio 추가)
+  - source $HOME/.bashrc  
+  
+ 3 UDEV 규칙
+  - wget https://www.pjrc.com/teensy/00-teensy.rules (udev 규칙을 Teensy 홈페이지에서 다운로드)
+  - sudo cp 00-teensy.rules /etc/udev/rules.d/ (파일을 /etc/udev/syslog.d 에 복사)
+  - sudo apt install screen (sudo apt install screen)
+   
+  
+# 로봇 설정 (모터 드라이버, Teensy, IMU 설정 및 PID, RPM, PIN 할당 설정 등)
+
+ 1 config 폴더의 lino_base_config.h를 Open
+  - #define LINO_BASE DIFFERENTIAL_DRIVE     (예시 : 각 드라이버 모듈에 맞는 것 선택)
+  - #define USE_GENERIC_2_IN_MOTOR_DRIVER    (예시 : 각 드라이버 모듈에 맞는 것 선택)
+  - #define USE_GY85_IMU                     (예시 : 각 IMU 모듈에 맞는 것 선택)
+ 
+ 2 모터체크
+  - cd linorobot2_hardware/calibration
+  - pio run --target upload -e <your_teensy_board> (Teensy모델에 맞게 입력)
+  * libusb 문제가 발생 시
+   - sudo apt install libusb-dev (libusb-dev 설치)
+ 3 모터회전
+  - screen /dev/ttyACM0
+  
+ 4 Teensy 실제 펌웨어 업로드 (위 체크 다되었을 시)
+  - cd linorobot2_hardware/firmware
+  - pio run --target upload -e <your_teensy_board> (Teensy모델에 맞게 입력)
