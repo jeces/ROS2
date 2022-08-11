@@ -6,4 +6,6 @@
  - bash install_linorobot2.bash <robot_type> <laser_sensor> <depth_sensor>
    : mecanum, ydlidar
    : ROSDISTRO="$(echo $ROS_DISTRO)" -> ROS2는 이렇게 써야함. 기본은 ROS1 
+   : install_linorobot2.bash 파일 내에 WORKSPACE도 생성함
+   : bash파일을 보면 설치되는 패키지들이 많이 있음
  - source ~/.bashrc
