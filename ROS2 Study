@@ -1,3 +1,5 @@
+0 우분투와 우분투 LTS 차이 - Long Term Support 장기지원 의미, 안전성과 신규기능 업데이트 차이라고 볼 수 있음
+
 1 ROS1, ROS2 차이점
  - 다양한 운영체제 지원: Linux, Mac OS 및 Windows 10 지원
  - roscore가 사라짐: ROS2에서는 master의 개념이 사라지고       
