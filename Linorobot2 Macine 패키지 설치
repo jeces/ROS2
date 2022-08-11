@@ -11,7 +11,7 @@
  - source ~/.bashrc
 
 
-# Machine PC(제어) 하드웨어 패키지 설치(Teensy)
+# Machine PC 하드웨어 패키지 설치(Teensy)
   
  1 하드웨어 다운로드
   - cd $HOME
