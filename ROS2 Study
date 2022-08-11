@@ -39,3 +39,16 @@ Extensibility : 프로토콜을 새로운 서비스로 확장시킬 수 있음.
 Plug-and-play : 새로운 application이나 service가 자동으로 discover되고 네트워크에 연결 됨.
 Scalability : 매우 큰 네트워크로 시스템을 확장할 수 있음.
 Type-safety : application의 programming 에러가 remote 노드들을 손상 시키지 못하게 함.
+
+# Gazebo
+ - ROS와 별개의 프로그램으로, 오픈 소스로 제공되는 가상 시뮬레이션 툴입니다
+ 
+# sdkmanager
+ - VM에서 지원 안함 윈도우 우분트에서 다시 설치하여 실행해야함
+ - https://forums.developer.nvidia.com/t/cannot-select-target-operating-system-in-nvidia-sdk-manager/175614/2
+ 
+# odom
+ - 주행거리측정
+ 
+# IMU센서
+ - IMU는 관성 측정 장치(Inertial Measurement Unit)이다.
