@@ -1,5 +1,4 @@
 # Machine PC Linorobot2 패키지 설치
-
  - source /opt/ros/<ros_distro>/setup.bash
  - cd /tmp
  - wget https://raw.githubusercontent.com/linorobot/linorobot2/${ROS_DISTRO}/install_linorobot2.bash
