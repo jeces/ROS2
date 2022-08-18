@@ -9,7 +9,7 @@
   - source install/setup.bash
   
  2 로봇 유형 정의
-  - echo "export LINOROBOT2_BASE=2wd" >> ~/.bashrc
+  - echo "export LINOROBOT2_BASE=mecanum" >> ~/.bashrc
   - source ~/.bashrc
   
  3 RVIZ 구성
