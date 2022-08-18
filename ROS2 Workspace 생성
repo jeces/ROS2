@@ -6,7 +6,8 @@
  2. cd ~/linorobot2_ws/src                                          
     작업공간 폴더 이동
 
- 3. git clone https://github.com/ros/ros_tutorials.git –b foxy-devel    
+ 3. git clone https://github.com/ros/ros_tutorials.git –b foxy-devel (foxy)
+    git clone https://github.com/ros/ros_tutorials.git -b galactic-devel (galactic)
     테스트 패키지 설치
 
  4. cd ~/linorobot2_ws                                             
