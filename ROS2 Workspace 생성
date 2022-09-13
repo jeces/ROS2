@@ -18,6 +18,7 @@
 
  6. colcon build                                                    
     빌드
+    - PATH 에러 시 : source /opt/ros/galactic/setup.bash
 
  7. . install/local_setup.bash                                         
     bash 환경설정  
