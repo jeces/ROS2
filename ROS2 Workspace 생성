@@ -36,6 +36,8 @@
 
  4. bash install_linorobot2.bash mecanum (로봇 먼저 적용)
     macanum ydlidar bash
+    - line 18 에러(로스버전 못찾음)
+     - sudo apt install python3-rospkg
 
  5. source ~/.bashrc                                                 
     적용
