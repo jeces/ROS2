@@ -1,0 +1,26 @@
+자율 주행 에러 내용 해결 못한 에러 로봇 [ WARN] [1672893730.913508692]: Both imu0_differential and imu0_relative were st to true. Using differential mode. 접속 에러 가장 위험
+
+[ERROR] [1672901828.084171]: Lost sync with device, restarting...
+
+호스트 컴퓨터
+
+1.맵 회전시 반경 자체가 너무 큼. 슬램과 로봇상의 tf 반경이 다름. 오차 보정의 문제인지, 바퀴만 동작시켜서는 확인 할 깃이 없음.
+
+지도의 데이터와 연마로봇, 패스선과 시간이 지날 수록 오차가 생김. 토픽 기본이 /path/viz로 되어 있음 내가 수정한것 같은데, 오타인지 확인해야 함. 오드메티트리 보라색(position)값에 대한 누적 오차가
+3.path 위치가 1번 에러의 오차에 대한 보정과 실제 주행시 오차가 없는지 확인해야 함.
+
+[ WARN] [1672893761.374909075]: local_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters
+
+[ WARN] [1672893761.374909075]: local_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters
+
+[ WARN] [1672893762.874036922]: No controllers plugins configured! - Use the param "controllers", which must be a list of tuples with a name and a type.
+
+[ WARN] [1672893762.879907765]: No recovery_behaviors plugins configured! - Use the param "recovery_behaviors", which must be a list of tuples with a name and a type.
+
+[ WARN] [1672893764.145566841]: No plugins loaded at all!
+
+[ERROR] [1672893764.145681950]: The last action goal to "exe_path" has been REJECTED
+
+축이 뒤틀리고 한참후에 나옴 [ WARN] [1672894337.557881588]: MessageFilter [target=base_footprint ]: Dropped 95.00% of messages so far. Please turn the [ros.rviz.message_filter] rosconsole logger to DEBUG for more information.
+
+[ WARN] [1672896258.557208947]: MessageFilter [target=base_footprint ]: The majority of dropped messages were due to messages growing older than the TF cache time. The last message's timestamp was: 1672893761.185227, and the last frame_id was: map
